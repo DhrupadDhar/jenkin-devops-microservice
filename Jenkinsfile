@@ -1,11 +1,34 @@
-node {
-	stage('Build') {
+// Scripted
+// node {
+// 	stage('Build') {
+// 		echo "Build"
+// 	}
+// 	stage('Test') {
+// 		echo "Test"
+// 	}
+// 	stage('Integration Test') {
+// 		echo "Integration Test"
+// 	}
+// }
+
+//Declarative
+pipeline {
+	agent any
+	stages{
+		stage('Build') {
+			steps{
 		echo "Build"
-	}
-	stage('Test') {
+			}
+		}
+		stage('Test') {
+			steps{
 		echo "Test"
-	}
-	stage('Integration Test') {
-		echo "Test"
-	}
+			}
+		}
+		stage('Integration Test') {
+			steps{
+		echo "Integration Test"
+			}
+		}
+    }
 }
